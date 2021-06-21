@@ -1,13 +1,185 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #eaedef;
+  font-family: "Montserrat", sans-serif;
+  min-width: 1080px;
+  padding: 0;
+  zoom: 95%;
+}
+.map-container {
+  height: 400px;
+  width: 60%;
+}
+
+.map-field {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #ffffff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+:root {
+  --BrewLogixBlue: #003b71;
+  --reddy-brown: #640404;
+  --seafoam-blue: #79add5;
+  --green: #799d4b;
+  --sand: "#e6dc76";
+}
+html {
+  --antd-wave-shadow-color: #1890ff;
+  --scroll-bar: 0;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+header {
+  display: block;
+}
+
+.bdb-header,
+.bdb-header--navbar {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+.bdb-header {
+  background-color: var(--BrewLogixBlue);
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99999;
+}
+.bdb-header--navbar {
+  height: 50px;
+}
+
+.bdb-header--navbar a.active,
+.bdb-header--navbar a:active,
+.bdb-header--navbar a:focus,
+.bdb-header--navbar a:hover {
+  background-color: #00284d;
+  border-radius: 5px;
+}
+.bdb-header--navbar a {
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  justify-content: center;
+  line-height: 1.22;
+  text-align: center;
+  text-decoration: none;
+  width: 164px;
+}
+[role="button"],
+a,
+area,
+button,
+input:not([type="range"]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+a {
+  color: #1890ff;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-text-decoration-skip: objects;
+}
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+user agent stylesheet a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.bdb-header--user {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  margin: 0 10px;
+  position: relative;
+}
+.MuiAvatar-colorDefault {
+  color: #fafafa;
+  background-color: #bdbdbd;
+}
+.MuiAvatar-fallback {
+  width: 75%;
+  height: 75%;
+}
+.MuiAvatar-root {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1;
+  user-select: none;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.brewGreen {
+  background-color: #799d4b;
+  color: white;
+}
+.BrewLogixBlue {
+  background-color: #003b71;
+  color: white;
+}
+.seafoamBlue {
+  background-color: #79add5;
+  color: white;
+}
+.reddy-brown {
+  background-color: #640404;
+  color: white;
+}
+
+.sand {
+  background-color: #e6dc76;
+  color: white;
+}
+
+.formBackground {
+  background-color: #fff;
 }

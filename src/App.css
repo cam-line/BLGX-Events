@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.events {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+
+.events-container {
+  margin-top: 30px;
+}
+
+.events-head {
+}
+
+.events-body {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.event-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.event {
+  background-color: white;
+}
+
+.input,
+.label {
+  display: block;
+}
+
+.ftBottomLayer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ftLogo {
+  width: 321px;
+  height: 71px;
+  margin-bottom: 18px;
+}
+
+.PrivateRoutes {
+  top: 50px;
+  position: absolute;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: #003b71;
+}
+.events-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-button {
+  text-align: center;
+}
+
+.upload-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.categories {
+  width: 80%;
+}
+
+.categories-top,
+.categories-bottom,
+.event-header {
+  margin-bottom: 30px;
+}
+
+.event-description-input,
+.event-age-input,
+.event-price-input,
+.event-link-input {
+  margin-bottom: 30px;
+}
+
+.location-checkboxes,
+.age-radio-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.no-events-text {
+  color: #79add5;
+  margin-top: 10%;
+}
+
+.event-info {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #003b71;
+  height: 300px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.event-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
