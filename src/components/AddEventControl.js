@@ -43,6 +43,8 @@ export class AddEventControl extends Component {
     this.setState({ step: 0 });
   };
 
+  editEvent = () => {};
+
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
@@ -61,15 +63,16 @@ export class AddEventControl extends Component {
 
   saveEvent = (item) => {
     let newEvents = this.state.events;
-
+    newEvents.push(item);
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(newEvents),
     };
+    console.log(newEvents);
     fetch("http://localhost:3000/events", requestOptions);
-    newEvents.push(item);
 
     this.setState({
       events: newEvents,
@@ -119,6 +122,7 @@ export class AddEventControl extends Component {
       events,
       noEndDate,
       image,
+      eventId,
     } = this.state;
     const values = {
       eventName,
@@ -133,9 +137,9 @@ export class AddEventControl extends Component {
       maxCost,
       categories,
       link,
-      events,
       noEndDate,
       image,
+      eventId,
     };
     console.log(step);
     switch (step) {
@@ -148,6 +152,7 @@ export class AddEventControl extends Component {
               handleChange={this.handleChange}
               addEndDate={this.addEndDate}
               values={values}
+              showButtons={true}
             />
           </div>
         );
@@ -159,6 +164,7 @@ export class AddEventControl extends Component {
               prevStep={this.prevStep}
               handleChange={this.handleChange}
               values={values}
+              showButtons={true}
             />
           </div>
         );
@@ -172,6 +178,7 @@ export class AddEventControl extends Component {
               values={values}
               saveEvent={this.saveEvent}
               saveImage={this.saveImage}
+              showButtons={true}
             />
           </div>
         );
@@ -182,6 +189,13 @@ export class AddEventControl extends Component {
               addEvent={this.addEvent}
               deleteEvent={this.deleteEvent}
               values={values}
+              events={events}
+              editEvent={this.editEvent}
+              nextStep={this.nextStep}
+              prevStep={this.prevStep}
+              handleChange={this.handleChange}
+              addEndDate={this.addEndDate}
+              showButtons={true}
             />
           </div>
         );

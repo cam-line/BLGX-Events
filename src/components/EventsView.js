@@ -4,11 +4,14 @@ import Event from "./Event.js";
 import CardDeck from "react-bootstrap/CardDeck";
 import Map from "./Map.js";
 import EventInfo from "./EventInfo";
+import EditEvent from "./EditEvent";
+
 export class EventsView extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showInfo: false,
+      isEditing: false,
       currentCard: 0,
     };
   }
@@ -16,13 +19,22 @@ export class EventsView extends Component {
   toggleInfo = (e) => {
     this.setState({
       showInfo: !this.state.showInfo,
+      isEditing: false,
+      currentCard: e.target.value,
+    });
+  };
+
+  toggleEdit = (e) => {
+    this.setState({
+      showInfo: false,
+      isEditing: !this.state.isEditing,
       currentCard: e.target.value,
     });
   };
   render() {
-    const { values } = this.props;
+    const { values, events } = this.props;
 
-    return !this.state.showInfo ? (
+    return !this.state.showInfo & !this.state.isEditing ? (
       <div className="container border events-container">
         <div className=" events">
           <div className="events-head">
@@ -38,13 +50,13 @@ export class EventsView extends Component {
             </div>
           </div>
           <div className="events-body">
-            {values.events.length === 0 ? (
+            {events.length === 0 ? (
               <div className="no-events-text">
                 <h4>There are no current events scheduled yet.</h4>
               </div>
             ) : (
               <CardDeck>
-                {values.events.map((event, index) => {
+                {events.map((event, index) => {
                   return (
                     <div>
                       <Event
@@ -53,6 +65,7 @@ export class EventsView extends Component {
                         addEvent={this.props.addEvent}
                         deleteEvent={this.props.deleteEvent}
                         toggleInfo={this.toggleInfo}
+                        toggleEdit={this.toggleEdit}
                       />
                     </div>
                   );
@@ -62,11 +75,20 @@ export class EventsView extends Component {
           </div>
         </div>
       </div>
-    ) : (
+    ) : this.state.showInfo ? (
       <EventInfo
         toggleInfo={this.toggleInfo}
         currentCard={this.state.currentCard}
-        events={values.events}
+        events={events}
+      />
+    ) : (
+      <EditEvent
+        toggleEdit={this.toggleEdit}
+        nextStep={this.props.nextStep}
+        prevStep={this.props.prevStep}
+        handleChange={this.props.handleChange}
+        addEndDate={this.props.addEndDate}
+        values={values}
       />
     );
   }

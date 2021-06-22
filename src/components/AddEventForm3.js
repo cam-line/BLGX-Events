@@ -163,12 +163,16 @@ export class AddEventForm3 extends Component {
         </div>
         <div className="navButtons">
           <div className="btn-group navButtons">
-            <NavButton
-              action={this.props.prevStep}
-              label="Back"
-              type="submit"
-              color="btn BrewLogixBlue"
-            />{" "}
+            {this.props.showButtons === true ? (
+              <NavButton
+                action={this.props.prevStep}
+                label="Back"
+                type="submit"
+                color="btn BrewLogixBlue"
+              />
+            ) : (
+              <></>
+            )}
             <NavButton
               action={this.submit}
               label="Save"
