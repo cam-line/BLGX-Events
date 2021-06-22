@@ -7,9 +7,16 @@
 
 .events-container {
   margin-top: 30px;
+  background-color: white;
 }
 
 .events-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.upcoming {
+  width: 600px;
 }
 
 .events-body {
@@ -49,7 +56,7 @@
 }
 
 .PrivateRoutes {
-  top: 50px;
+  top: 90px;
   position: absolute;
   width: 100%;
 }
@@ -107,17 +114,61 @@
   margin-top: 10%;
 }
 
-.event-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #003b71;
-  height: 300px;
-}
-
 .event-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/*
+.event-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffff;
+  height: 600px;
+}
+.event-info-top {
+}
+.event-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-info-image {
+  height: 200px;
+}
+
+.event-info-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.event-about {
+  width: 70%;
+}
+
+.event-details {
+  width: 25%;
+}
+
+*/
+.confirmation-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: #79add5;
+  width: 350px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  z-index: 5;
 }

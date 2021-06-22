@@ -23,7 +23,7 @@ export class EventsView extends Component {
     const { values } = this.props;
 
     return !this.state.showInfo ? (
-      <div className="events-container">
+      <div className="container border events-container">
         <div className=" events">
           <div className="events-head">
             <div className="upcoming">
@@ -51,6 +51,7 @@ export class EventsView extends Component {
                         id={index}
                         event={event.item}
                         addEvent={this.props.addEvent}
+                        deleteEvent={this.props.deleteEvent}
                         toggleInfo={this.toggleInfo}
                       />
                     </div>
@@ -60,7 +61,6 @@ export class EventsView extends Component {
             )}
           </div>
         </div>
-        <Map />
       </div>
     ) : (
       <EventInfo
@@ -73,3 +73,4 @@ export class EventsView extends Component {
 }
 
 export default EventsView;
+//<Map />

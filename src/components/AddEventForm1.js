@@ -3,10 +3,12 @@ import NavButton from "./NavButton";
 import { ProgressBar, Row, Col } from "react-bootstrap";
 import PlacesAutocomplete from "react-places-autocomplete";
 export class AddEventForm1 extends Component {
+  /*First form when creating a new event*/
   render() {
     return (
       <form className="container p-3 my-3 border formBackground">
         <Row className="event-header">
+          {/*header row with progress bar*/}
           <Col md={4}>
             <h3>Add Event</h3>
           </Col>
@@ -16,6 +18,7 @@ export class AddEventForm1 extends Component {
           </Col>
         </Row>
         <div>
+          {/*name input field*/}
           <div className="form-group">
             <label htmlFor="name">Event Name</label>
             <input
@@ -27,6 +30,7 @@ export class AddEventForm1 extends Component {
               required
             />
           </div>
+          {/*date and time input field*/}
           <div className="form-group">
             <div className="row">
               <div className="col">
@@ -53,6 +57,7 @@ export class AddEventForm1 extends Component {
               </div>
             </div>
           </div>
+          {/*button toggles input for end date/time*/}
           <div className="form-group">
             <div className="add-end-date">
               {this.props.values.noEndDate ? (
@@ -87,7 +92,7 @@ export class AddEventForm1 extends Component {
               )}
             </div>
           </div>
-
+          {/*location input field, autocomplete using Google Places*/}
           <div className="location-input" id="location-input">
             <div className="form-group">
               <label htmlFor="location">Location</label>

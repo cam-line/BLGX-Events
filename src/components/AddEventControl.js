@@ -51,6 +51,14 @@ export class AddEventControl extends Component {
     this.setState({ noEndDate: !this.state.noEndDate });
   };
 
+  deleteEvent = (index) => {
+    let newEvents = this.state.events;
+    newEvents.splice(index, 1);
+    this.setState({
+      events: newEvents,
+    });
+  };
+
   saveEvent = (item) => {
     let newEvents = this.state.events;
 
@@ -170,7 +178,11 @@ export class AddEventControl extends Component {
       default:
         return (
           <div>
-            <EventsView addEvent={this.addEvent} values={values} />
+            <EventsView
+              addEvent={this.addEvent}
+              deleteEvent={this.deleteEvent}
+              values={values}
+            />
           </div>
         );
     }
