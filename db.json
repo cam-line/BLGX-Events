@@ -1,181 +1,19 @@
 {
-  "events": [
-    [
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      },
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      }
-    ],
-    [
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      },
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      },
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      }
-    ],
-    [
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      },
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      },
-      {
-        "item": {
-          "eventName": "",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      },
-      {
-        "item": {
-          "eventName": "Draft Beer Day",
-          "startDate": "",
-          "startTime": "",
-          "endDate": "",
-          "endTime": "",
-          "location": "",
-          "description": "",
-          "ageRestriction": "",
-          "minCost": 0,
-          "maxCost": 0,
-          "categories": [],
-          "link": "",
-          "noEndDate": true,
-          "image": "https://brewlogix.com/wp-content/uploads/2021/03/X_Logo_Color.png",
-          "eventId": 0
-        }
-      }
-    ]
-  ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

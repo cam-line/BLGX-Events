@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import NavButton from "./NavButton";
+import NavButton from "../SharedComponents/NavButton";
 import { ProgressBar, Row, Col } from "react-bootstrap";
 import PlacesAutocomplete from "react-places-autocomplete";
 export class AddEventForm1 extends Component {
   /*First form when creating a new event*/
   render() {
     return (
-      <form className="container p-3 my-3 border formBackground">
+      <form
+        onSubmit={this.props.nextStep}
+        className="container p-3 my-3 border formBackground"
+      >
         <Row className="event-header">
           {/*header row with progress bar*/}
           <Col md={4}>
@@ -25,9 +28,8 @@ export class AddEventForm1 extends Component {
               type="text"
               id="name"
               className="form-control"
-              onChange={this.props.handleChange("eventName")}
-              defaultValue={this.props.values.eventName}
-              required
+              onChange={this.props.handleChange("name")}
+              defaultValue={this.props.values.name}
             />
           </div>
           {/*date and time input field*/}
@@ -41,7 +43,6 @@ export class AddEventForm1 extends Component {
                   className="form-control"
                   onChange={this.props.handleChange("startDate")}
                   defaultValue={this.props.values.startDate}
-                  required
                 />
               </div>
               <div className="col">
@@ -52,7 +53,6 @@ export class AddEventForm1 extends Component {
                   className="form-control"
                   onChange={this.props.handleChange("startTime")}
                   defaultValue={this.props.values.startTime}
-                  required
                 />
               </div>
             </div>
@@ -61,11 +61,16 @@ export class AddEventForm1 extends Component {
           <div className="form-group">
             <div className="add-end-date">
               {this.props.values.noEndDate ? (
-                <NavButton
-                  action={this.props.addEndDate}
-                  label="Add End Date and Time"
-                  color="btn seafoamBlue"
-                />
+                <div>
+                  <label for="end-date">+</label>
+                  <button
+                    id="end-date"
+                    onClick={this.props.addEndDate}
+                    className="btn seafoamBlue"
+                  >
+                    Add End Date and Time
+                  </button>
+                </div>
               ) : (
                 <div className="row">
                   <div className="col">
@@ -74,8 +79,8 @@ export class AddEventForm1 extends Component {
                       type="date"
                       id="endDate"
                       className="form-control"
-                      onChange={this.props.handleChange("startDate")}
-                      defaultValue={this.props.values.startDate}
+                      onChange={this.props.handleChange("endDate")}
+                      defaultValue={this.props.values.endDate}
                     />
                   </div>
                   <div className="col">
@@ -84,8 +89,8 @@ export class AddEventForm1 extends Component {
                       type="time"
                       id="endTime"
                       className="form-control"
-                      onChange={this.props.handleChange("startTime")}
-                      defaultValue={this.props.values.startTime}
+                      onChange={this.props.handleChange("endTime")}
+                      defaultValue={this.props.values.endTime}
                     />
                   </div>
                 </div>
@@ -96,6 +101,75 @@ export class AddEventForm1 extends Component {
           <div className="location-input" id="location-input">
             <div className="form-group">
               <label htmlFor="location">Location</label>
+              <input
+                type="text"
+                placeholder="Enter the address"
+                className="form-control"
+                onChange={this.props.handleChange("location")}
+                defaultValue={this.props.values.location}
+              ></input>
+            </div>
+            <div className="form-group">
+              <ul className="location-checkboxes">
+                <div className="location-checkbox">
+                  <input
+                    type="checkbox"
+                    name="location"
+                    onClick={this.props.handleChange("location")}
+                    defaultValue={this.props.values.location}
+                  />
+                  Off Premise Location
+                </div>
+                <div className="location-checkbox">
+                  <input
+                    type="checkbox"
+                    name="location"
+                    onClick={this.props.handleChange("location")}
+                    defaultValue={this.props.values.location}
+                  />
+                  Online
+                </div>
+                <div className="location-checkbox">
+                  <input
+                    type="checkbox"
+                    name="location"
+                    onClick={this.props.handleChange("location")}
+                    defaultValue={this.props.values.location}
+                  />
+                  To be Announced
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {/*Next and Back Buttons*/}
+        <div className="navButtons">
+          {this.props.showButtons === true ? (
+            <div className="btn-group">
+              <button
+                onClick={this.props.prevStep}
+                className="btn BrewLogixBlue"
+              >
+                Back
+              </button>
+              <button type="submit" className="btn brewGreen">
+                Next
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+      </form>
+    );
+  }
+}
+
+export default AddEventForm1;
+
+//Places Autocomplete for Address Search Bar
+/*
+<label htmlFor="location">Location</label>
 
               <PlacesAutocomplete
                 onChange={this.props.handleChange.bind(this, "location")}
@@ -120,7 +194,7 @@ export class AddEventForm1 extends Component {
                           backgroundColor: suggestion.active
                             ? "79add5"
                             : "#fff",
-                        };*/
+                        };
                         return (
                           <div {...getSuggestionItemProps()}>
                             {suggestion.description}
@@ -131,65 +205,4 @@ export class AddEventForm1 extends Component {
                   </div>
                 )}
               </PlacesAutocomplete>
-            </div>
-            <div className="form-group">
-              <ul className="location-checkboxes">
-                <div className="location-checkbox">
-                  <input
-                    type="checkbox"
-                    value="off-premise"
-                    name="location"
-                    onClick={this.props.handleChange("location")}
-                    defaultValue={this.props.values.location}
-                  />
-                  Off Premise Location
-                </div>
-                <div className="location-checkbox">
-                  <input
-                    type="checkbox"
-                    value="online"
-                    name="location"
-                    onClick={this.props.handleChange("location")}
-                    defaultValue={this.props.values.location}
-                  />
-                  Online
-                </div>
-                <div className="location-checkbox">
-                  <input
-                    type="checkbox"
-                    value="tba"
-                    name="location"
-                    onClick={this.props.handleChange("location")}
-                    defaultValue={this.props.values.location}
-                  />
-                  To be Announced
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="navButtons">
-          {this.props.showButtons === true ? (
-            <div className="btn-group">
-              <NavButton
-                action={this.props.prevStep}
-                label="Back"
-                color="btn BrewLogixBlue"
-              />
-              <NavButton
-                action={this.props.nextStep}
-                label="Next"
-                type="submit"
-                color="btn brewGreen "
-              />
-            </div>
-          ) : (
-            <></>
-          )}
-        </div>
-      </form>
-    );
-  }
-}
-
-export default AddEventForm1;
+*/

@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import NavButton from "./NavButton";
+import NavButton from "../SharedComponents/NavButton";
 import { ProgressBar, Row, Col } from "react-bootstrap";
 
 export class AddEventForm2 extends Component {
   render() {
     return (
-      <form className="container p-3 my-3 border formBackground">
+      <form
+        onSubmit={this.props.nextStep}
+        className="container p-3 my-3 border formBackground"
+      >
         <div>
+          {/*Header with title and progress bar*/}
           <Row className="event-header">
             <Col md={4}>
               <h3>Add Event</h3>
@@ -17,6 +21,7 @@ export class AddEventForm2 extends Component {
             </Col>
           </Row>
           <div>
+            {/*Input for event description*/}
             <div className="event-description-input">
               <h5>Description</h5>
               <textarea
@@ -28,6 +33,7 @@ export class AddEventForm2 extends Component {
                 defaultValue={this.props.values.description}
               />
             </div>
+            {/*Age input using radio buttons*/}
             <div className="event-age-input">
               <h5>Age Restrictions</h5>
               <div className="age-radio-buttons">
@@ -72,6 +78,7 @@ export class AddEventForm2 extends Component {
                 </div>
               </div>
             </div>
+            {/*min/max price input with a min price of 0*/}
             <div className="event-price-input">
               <h5>Price Range</h5>
               <div className="row">
@@ -84,7 +91,6 @@ export class AddEventForm2 extends Component {
                     placeholder="min $"
                     onChange={this.props.handleChange("minCost")}
                     min="0"
-                    required
                   />
                 </div>
                 <div className="col">
@@ -96,11 +102,11 @@ export class AddEventForm2 extends Component {
                     placeholder="max $"
                     onChange={this.props.handleChange("maxCost")} //defaultValue={this.props.values.maxCost}
                     min="0"
-                    required
                   />
                 </div>
               </div>
             </div>
+            {/*Link to buy tickets*/}
             <div className="event-link-input">
               <h5>Ticket Link</h5>
               <input
@@ -111,20 +117,19 @@ export class AddEventForm2 extends Component {
               />
             </div>
           </div>
+          {/*Navigation buttons*/}
           <div className="navButtons">
             {this.props.showButtons === true ? (
               <div className="btn-group navButtons">
-                <NavButton
-                  action={this.props.prevStep}
-                  label="Back"
-                  color="btn BrewLogixBlue"
-                />
-                <NavButton
-                  action={this.props.nextStep}
-                  label="Next"
-                  type="submit"
-                  color="btn brewGreen"
-                />
+                <button
+                  onClick={this.props.prevStep}
+                  className="btn BrewLogixBlue"
+                >
+                  Back
+                </button>
+                <button type="submit" className="btn brewGreen">
+                  Next
+                </button>
               </div>
             ) : (
               <></>

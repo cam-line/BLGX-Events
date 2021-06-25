@@ -1,12 +1,13 @@
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.events-container {
-  margin-top: 30px;
+/*Main Container Boxes*/
+.events,
+.formBackground,
+.event-info {
+  height: 80%;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  padding: 27px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: white;
 }
 
@@ -15,16 +16,19 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .upcoming {
   width: 600px;
 }
 
 .events-body {
-  width: 80%;
+  width: 100%;
+}
+
+.card-deck {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .event-cards {
@@ -114,6 +118,11 @@
   margin-top: 10%;
 }
 
+.event-card-container {
+  padding: 1%;
+  margin: 27px;
+}
+
 .event-body {
   display: flex;
   flex-direction: column;
@@ -123,43 +132,61 @@
 .clickable-event-card {
   cursor: pointer;
 }
-/*
-.event-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #ffff;
-  height: 600px;
+
+.event-image {
+  max-width: 100%;
 }
+
+.event-image-container {
+  width: 95%;
+}
+
+/*Event Info Page*/
+.event-info-header,
+.edit-event,
+.event-info-top,
+.event-info-middle {
+  margin: 1%;
+}
+
 .event-info-top {
+  background-color: #eaedef;
 }
-.event-info-header {
+
+.event-info-name {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+}
+
+.event-info-cost {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.brewery-image {
+  max-width: 30%;
 }
 
 .event-info-image {
-  height: 200px;
-}
-
-.event-info-middle {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  justify-content: center;
+  margin: 1%;
 }
 
 .event-about {
-  width: 70%;
+  background-color: #eaedef;
+  margin-right: 0.5%;
+  padding: 1%;
 }
 
 .event-details {
-  width: 25%;
+  background-color: #eaedef;
+  margin-left: 0.5%;
+  padding: 1%;
 }
 
-*/
+/*Confirm delete and edit*/
 .confirmation-container {
   display: flex;
   flex-direction: column;
@@ -173,4 +200,46 @@
   border-radius: 0.3rem;
   padding: 1rem;
   z-index: 5;
+}
+
+.edit-event-info {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: #79add5;
+  width: 60%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  z-index: 5;
+
+  border-radius: 3px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.edit-form {
+  background-color: white;
+  height: 80%;
+  overflow: scroll;
+  padding: 1%;
+}
+
+.edit-buttons {
+  margin: 1%;
+}
+
+.cancel-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.save-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-header {
+  height: 10%;
 }

@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-import NavButton from "./NavButton";
+import NavButton from "../SharedComponents/NavButton";
 import { ProgressBar, Row, Col, CardDeck, Card } from "react-bootstrap";
 
 export class AddEventForm3 extends Component {
+  // callbcak that calls the saveEvent function in addeventcontrol which saves this event to the server
   submit = (e) => {
     e.preventDefault();
-    this.props.saveEvent({
-      item: this.props.values,
-    });
+    // submits an object containing the values associated with this event
+    this.props.saveEvent(this.props.values);
   };
+
+  // when the user uploads an image, this calls back to saveImage on addeventcontrol which sets the image to the one chose
   onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       this.props.saveImage(event);
@@ -16,7 +18,10 @@ export class AddEventForm3 extends Component {
   };
   render() {
     return (
-      <div className="container p-3 my-3 border formBackground">
+      <form
+        onSubmit={this.submit}
+        className="container p-3 my-3 border formBackground"
+      >
         <Row className="event-header">
           <Col md={4}>
             <h3>Add Event</h3>
@@ -164,23 +169,21 @@ export class AddEventForm3 extends Component {
         <div className="navButtons">
           <div className="btn-group navButtons">
             {this.props.showButtons === true ? (
-              <NavButton
-                action={this.props.prevStep}
-                label="Back"
-                type="submit"
-                color="btn BrewLogixBlue"
-              />
+              <button
+                onClick={this.props.prevStep}
+                className="btn BrewLogixBlue"
+              >
+                Back
+              </button>
             ) : (
               <></>
             )}
-            <NavButton
-              action={this.submit}
-              label="Save"
-              color="btn reddy-brown"
-            />
+            <button type="submit" className="btn reddy-brown">
+              Save
+            </button>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
