@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,72 +22,54 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Event Planner</title>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
+  <title>Event Planner</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
 
-    <!--Bootstrap-->
-    <!-- Latest compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+  <!--Bootstrap-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <header class="bdb-header">
-      <div class="bdb-header--navbar">
-        <div>
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAkCAYAAACaJFpUAAAABHNCSVQICAgIfAhkiAAABCRJREFUSEu9l1moV2UUxX+rrMxmKRpogiAiIhX1qURNGhA1qMSK6CGKMhUN30rQwnCgkKysCJKQMCyaByJ9qTA1FHwoKy0hshSEbLSy2rGu+9zOOZ3/cAf84F7u/f+/861v77322usoIoYDhyT9zBFYiogLgMskvX0E8DDgWcBjkmb0BzAiJCm6fdaAJwGbgFGS/uz2wYg4CjgOOB7wpc8BfgV2Strf6hwDDgE+Al6RtLxbwPo+Rwr48ucC04DzgSclfVre601ExCrgVm+S9FN/QYvnEnw0sBh4SNLG4rsC8GZgLTAPWNmXmrS7XPJjjKS36oCXAJ8BvwEjJe0aaJSZuVOBR4C7iiCKCJ3774ETgDeAmyQdGghokvGlJNWEOqCB1wE3Av8A90l6vL+AEWHivAq4jh8CVcAMfyTwCWDW/mimSfqgr6ARMR1YkW3iQCwoUysRJqC/3AOcnSBfAuMl7e0GNCJcr4eBO4Ch+YzLcr2kdyukKdH5UacTMLjVYzNwtaRfWoFmC1wBuATOUu9xwPvAdWXW95CmBHh6svWM/MygrwG3STKDKysihgGz3WupOmWwL7J2+8oPVQAztU8A92aUxd7VwN1l5kbEhYD769LaXl/yO2CipJ31SzYBOrptKVHFfjPXFynSPRdYBJxYA/N+t9dVkj5vKsP/ADPKewDLXfl7C/sCp8l1ASzelYoAFozJ7YSjFaCnwAvZlz7U+roeGAuc13BzZ8AEuUXSD60I5s8bATNKD2ZPEdfE4jsllah+3l/A88AcSQfbgbUFTFArxQM5bo5uOMzMde8t6Vbw20V4JvCOB3NDJhy1waaXm7pTdC0jjIgRwOs5ROuXMpgVaSLwldsF2CLJzO64mtrCAv4UUDR/+RCT42XALLbL877b8+/Zkl7shFhXmjsBy9vJDQ8eAB7MdvFlTBRHWbSHU+zeXCHJRGpcxTz0Q3ZtVhS3RL2/tgMzJW2KiGOA59KSNPWiJ8XCVvpbALqRPUbKB7hWfwBrcj7akfWsiDBjl2VqraflTPk5D15LobNSWXZtl7voDeK7G7hBkqNrXBExJge3dbXOh49zUlRMmQHfA64pnfi3jbHr0Y39j4hTgKXJ1nqk9rvjJPnMnmVAp+3Y/P8bGx5gQ3lTJ+alt50EPFNrJbPaWXKL9QL6Q/+86ZpIqsyvTmAVdkWY3VamWSmDjsziYH/TC/h79tN8SQYe8IoIR2t7aKF3q9iB97x/OKVPS3IjD+qKw9HaWF8JXFsGtHLMk/TtYCJGhIezHYGJ9J9NjIiv80OzaVBAI8JKZJ873uWS5Jr21tDT4H6gcF6rJNmX9nlFhJ27yzMHsENYCTwryZ1wGNC/0ur5/c4T3e96ZqpbxM1vi+hX8spLZ6qN/edpwMXARelp7WO3AjuanN6/10OENIOgCJgAAAAASUVORK5CYII="
-            alt="logo"
-          />
-        </div>
-        <a href="/home">Home</a>
-        <a href="/locations">Locations</a>
-        <a href="/products">Products</a>
-        <a href="/team_members">Team Members</a>
-        <a aria-current="page" class="active" href="/">Events</a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <header class="bdb-header">
+    <div class="bdb-header--navbar">
+      <div id="logo">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAkCAYAAACaJFpUAAAABHNCSVQICAgIfAhkiAAABCRJREFUSEu9l1moV2UUxX+rrMxmKRpogiAiIhX1qURNGhA1qMSK6CGKMhUN30rQwnCgkKysCJKQMCyaByJ9qTA1FHwoKy0hshSEbLSy2rGu+9zOOZ3/cAf84F7u/f+/861v77322usoIoYDhyT9zBFYiogLgMskvX0E8DDgWcBjkmb0BzAiJCm6fdaAJwGbgFGS/uz2wYg4CjgOOB7wpc8BfgV2Strf6hwDDgE+Al6RtLxbwPo+Rwr48ucC04DzgSclfVre601ExCrgVm+S9FN/QYvnEnw0sBh4SNLG4rsC8GZgLTAPWNmXmrS7XPJjjKS36oCXAJ8BvwEjJe0aaJSZuVOBR4C7iiCKCJ3774ETgDeAmyQdGghokvGlJNWEOqCB1wE3Av8A90l6vL+AEWHivAq4jh8CVcAMfyTwCWDW/mimSfqgr6ARMR1YkW3iQCwoUysRJqC/3AOcnSBfAuMl7e0GNCJcr4eBO4Ch+YzLcr2kdyukKdH5UacTMLjVYzNwtaRfWoFmC1wBuATOUu9xwPvAdWXW95CmBHh6svWM/MygrwG3STKDKysihgGz3WupOmWwL7J2+8oPVQAztU8A92aUxd7VwN1l5kbEhYD769LaXl/yO2CipJ31SzYBOrptKVHFfjPXFynSPRdYBJxYA/N+t9dVkj5vKsP/ADPKewDLXfl7C/sCp8l1ASzelYoAFozJ7YSjFaCnwAvZlz7U+roeGAuc13BzZ8AEuUXSD60I5s8bATNKD2ZPEdfE4jsllah+3l/A88AcSQfbgbUFTFArxQM5bo5uOMzMde8t6Vbw20V4JvCOB3NDJhy1waaXm7pTdC0jjIgRwOs5ROuXMpgVaSLwldsF2CLJzO64mtrCAv4UUDR/+RCT42XALLbL877b8+/Zkl7shFhXmjsBy9vJDQ8eAB7MdvFlTBRHWbSHU+zeXCHJRGpcxTz0Q3ZtVhS3RL2/tgMzJW2KiGOA59KSNPWiJ8XCVvpbALqRPUbKB7hWfwBrcj7akfWsiDBjl2VqraflTPk5D15LobNSWXZtl7voDeK7G7hBkqNrXBExJge3dbXOh49zUlRMmQHfA64pnfi3jbHr0Y39j4hTgKXJ1nqk9rvjJPnMnmVAp+3Y/P8bGx5gQ3lTJ+alt50EPFNrJbPaWXKL9QL6Q/+86ZpIqsyvTmAVdkWY3VamWSmDjsziYH/TC/h79tN8SQYe8IoIR2t7aKF3q9iB97x/OKVPS3IjD+qKw9HaWF8JXFsGtHLMk/TtYCJGhIezHYGJ9J9NjIiv80OzaVBAI8JKZJ873uWS5Jr21tDT4H6gcF6rJNmX9nlFhJ27yzMHsENYCTwryZ1wGNC/0ur5/c4T3e96ZqpbxM1vi+hX8spLZ6qN/edpwMXARelp7WO3AjuanN6/10OENIOgCJgAAAAASUVORK5CYII="
+          alt="logo" />
       </div>
-      <div class="bdb-header--user">
-        <p>Super Admin</p>
-        <div class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault">
-          <svg
-            class="MuiSvgIcon-root MuiAvatar-fallback"
-            focusable="false"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-            ></path>
-          </svg>
-        </div>
-        <div class="pop-over-container" style="display: none">
-          <svg
-            class="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            style="
+      <a href="/home">Home</a>
+      <a href="/locations">Locations</a>
+      <a href="/products">Products</a>
+      <a href="/team_members">Team Members</a>
+      <a aria-current="page" class="active" href="/">Events</a>
+    </div>
+    <div class="bdb-header--user">
+      <p>Super Admin</p>
+      <div class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault">
+        <svg class="MuiSvgIcon-root MuiAvatar-fallback" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+          </path>
+        </svg>
+      </div>
+      <div class="pop-over-container" style="display: none">
+        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" style="
               color: rgb(255, 255, 255);
               position: absolute;
               top: -56px;
@@ -97,38 +77,31 @@
               font-size: 102px;
               z-index: 11;
               transform: rotate(180deg);
-            "
-          >
-            <path d="M7 10l5 5 5-5z"></path>
-          </svg>
-          <div class="pop-top-section">
-            <span class="pop-greet">Hello, Super!</span
-            ><span class="pop-email">curt.fankhauser@gmail.com</span
-            ><span class="pop-edit">Edit User Profile</span
-            ><span class="pop-edit">Brewery Outreach Portal</span>
-          </div>
-          <div class="pop-top-section">
-            <span class="pop-knowledge">Knowledge Center</span
-            ><span class="pop-contact">Contact MarketMyBrewery</span
-            ><span class="pop-cont-info"><span>1-317-610-0593</span></span
-            ><span class="pop-cont-info"
-              ><a href="mailto:outreach@MarketMyBrewery.com"
-                >outreach@MarketMyBrewery.com</a
-              ></span
-            ><span class="pop-cont-info"
-              ><span>BreweryDB Test Brewery</span></span
-            >
-          </div>
-          <div class="pop-footer">
-            <span class="pop-signout">Sign Out</span>
-          </div>
+            ">
+          <path d="M7 10l5 5 5-5z"></path>
+        </svg>
+        <div class="pop-top-section">
+          <span class="pop-greet">Hello, Super!</span><span class="pop-email">curt.fankhauser@gmail.com</span><span
+            class="pop-edit">Edit User Profile</span><span class="pop-edit">Brewery Outreach Portal</span>
+        </div>
+        <div class="pop-top-section">
+          <span class="pop-knowledge">Knowledge Center</span><span class="pop-contact">Contact
+            MarketMyBrewery</span><span class="pop-cont-info"><span>1-317-610-0593</span></span><span
+            class="pop-cont-info"><a
+              href="mailto:outreach@MarketMyBrewery.com">outreach@MarketMyBrewery.com</a></span><span
+            class="pop-cont-info"><span>BreweryDB Test Brewery</span></span>
+        </div>
+        <div class="pop-footer">
+          <span class="pop-signout">Sign Out</span>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1gMWegH9n00jD4Q2KJYZMVrGN8u52LLY&libraries=places"></script>
-    <div id="root"></div>
-    <!--
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1gMWegH9n00jD4Q2KJYZMVrGN8u52LLY&libraries=places"></script>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -138,30 +111,31 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script>
-      let autocomplete;
-      function initAutocomplete() {
-        autocomplete = new google.maps.places.Autocomplete(
-          document.getElementById("autocomplete"),
-          {
-            types: ["establishment"],
-            componentsRestrictions: { country: ["AU"] },
-            fields: ["place_id", "geometry", "name"],
-          }
-        );
-        autocomplete.addListener("place_changed", onPlaceChanged);
-      }
-      function onPlaceChanged() {
-        var place = autocomplete.getPlace();
-
-        if (!place.geometry) {
-          document.getElementById("autocomplete").placeholder = "Enter a place";
-        } else {
-          document.getElementById("details").innerHTML = place.name;
+  <script>
+    let autocomplete;
+    function initAutocomplete() {
+      autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById("autocomplete"),
+        {
+          types: ["establishment"],
+          componentsRestrictions: { country: ["AU"] },
+          fields: ["place_id", "geometry", "name"],
         }
-      }
-    </script>
+      );
+      autocomplete.addListener("place_changed", onPlaceChanged);
+    }
+    function onPlaceChanged() {
+      var place = autocomplete.getPlace();
 
-    <!--<input id="autocomplete" type="text" class="form-control" />-->
-  </body>
+      if (!place.geometry) {
+        document.getElementById("autocomplete").placeholder = "Enter a place";
+      } else {
+        document.getElementById("details").innerHTML = place.name;
+      }
+    }
+  </script>
+
+  <!--<input id="autocomplete" type="text" class="form-control" />-->
+</body>
+
 </html>

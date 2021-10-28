@@ -10,6 +10,7 @@ import EventsView from "../Events/EventsView";
 export class AddEventControl extends Component {
   // state containing event information
   state = {
+    id: 0,
     step: 3,
     events: [],
     name: "",
@@ -60,8 +61,16 @@ export class AddEventControl extends Component {
     this.setState({ step: 0 });
   };
 
-  editEvent = () => {
-    // TODO -
+  editEvent = (values) => (e) => {
+    // TODO - edit specified value of object in events array at index specified by e.target.value
+    let events = this.state.events;
+    //let event = events[e.target.value];
+    let newEvents = events.map((event, index) => {
+      if (index === e.target.value) {
+        event = values;
+      }
+    });
+    this.setState({ events: newEvents });
   };
 
   handleChange = (input) => (e) => {
@@ -149,6 +158,7 @@ export class AddEventControl extends Component {
   render() {
     // destructure state elements
     const {
+      id,
       step,
       name,
       startDate,
@@ -168,6 +178,7 @@ export class AddEventControl extends Component {
     } = this.state;
     // create an object containing all the elements from this events state
     const values = {
+      id,
       name,
       startDate,
       startTime,
@@ -183,7 +194,7 @@ export class AddEventControl extends Component {
       noEndDate,
       image,
     };
-    console.log(step);
+    //console.log(step);
     // switch/case that uses the step variable to determine which component to render
     switch (step) {
       case 0: // form 1

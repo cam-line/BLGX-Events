@@ -74,6 +74,7 @@ export class EventsView extends Component {
         addEndDate={this.props.addEndDate}
         values={this.props.values}
         saveImage={this.props.saveImage}
+        editEvent={this.props.editEvent}
       />
     );
   }

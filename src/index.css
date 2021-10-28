@@ -69,7 +69,7 @@ header {
   z-index: 99999;
 }
 .bdb-header--navbar {
-  height: 50px;
+  justify-content: flex-start;
 }
 
 .bdb-header--navbar a.active,
@@ -79,7 +79,7 @@ header {
   background-color: #00284d;
   border-radius: 5px;
 }
-.bdb-header--navbar a {
+.bdb-header--navbar a, #logo {
   align-items: center;
   color: #fff;
   cursor: pointer;
@@ -92,7 +92,9 @@ header {
   text-align: center;
   text-decoration: none;
   width: 164px;
+  margin: 10px;
 }
+
 [role="button"],
 a,
 area,

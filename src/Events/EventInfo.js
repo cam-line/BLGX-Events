@@ -17,7 +17,7 @@ export class EventInfo extends Component {
   render() {
     const { events, currentCard } = this.props;
     const event = events[currentCard];
-    console.log(event);
+    //console.log(event);
     return (
       <div className="container p-3 my-3 border  event-info">
         {this.state.edit === true ? (
@@ -29,6 +29,7 @@ export class EventInfo extends Component {
             events={events}
             currentCard={currentCard}
             saveImage={this.props.saveImage}
+            editEvent={this.props.editEvent}
           />
         ) : (
           <></>

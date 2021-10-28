@@ -2,15 +2,79 @@ import React, { Component } from "react";
 import { Row, CardDeck, Card } from "react-bootstrap";
 
 export class EditEvent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: this.props.values.name,
+      id: this.props.values.id,
+      startDate: this.props.values.startDate,
+      startTime: this.props.values.startTime,
+      endDate: this.props.values.endDate,
+      endTime: this.props.values.endTime,
+      location: this.props.values.location,
+      description: this.props.values.description,
+      ageRestriction: this.props.values.ageRestriction,
+      minCost: this.props.values.minCost,
+      maxCost: this.props.values.maxCost,
+      link: this.props.values.link,
+      noEndDate: this.props.values.noEndDate,
+      image: this.props.values.image,
+      categories: this.props.values.categories,
+    };
+  }
+
+  updateValue = (value) => (e) => {
+    this.setState({ [value]: e.target.value });
+  };
+
+  updateEvent = (values) => {
+    this.props.editEvent(values);
+  };
+
   onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       this.props.saveImage(event);
     }
   };
+
   render() {
     const { events, currentCard } = this.props;
     const event = events[currentCard];
-
+    const {
+      id,
+      name,
+      startDate,
+      startTime,
+      endDate,
+      endTime,
+      location,
+      description,
+      ageRestriction,
+      minCost,
+      maxCost,
+      categories,
+      link,
+      noEndDate,
+      image,
+    } = this.state;
+    // create an object containing all the elements from this events state
+    const values = {
+      id,
+      name,
+      startDate,
+      startTime,
+      endDate,
+      endTime,
+      location,
+      description,
+      ageRestriction,
+      minCost,
+      maxCost,
+      categories,
+      link,
+      noEndDate,
+      image,
+    };
     return (
       <div className="edit-event-info border">
         <div className="edit-header">
@@ -25,7 +89,7 @@ export class EditEvent extends Component {
                 type="text"
                 id="name"
                 className="form-control"
-                onChange={this.props.handleChange("name")}
+                onChange={this.updateValue("name")}
                 defaultValue={event.name}
                 required
               />
@@ -39,7 +103,7 @@ export class EditEvent extends Component {
                     type="date"
                     id="startDate"
                     className="form-control"
-                    onChange={this.props.handleChange("startDate")}
+                    onChange={this.updateValue("startDate")}
                     defaultValue={event.startDate}
                     required
                   />
@@ -50,7 +114,7 @@ export class EditEvent extends Component {
                     type="time"
                     id="startTime"
                     className="form-control"
-                    onChange={this.props.handleChange("startTime")}
+                    onChange={this.updateValue("startTime")}
                     defaultValue={event.startTime}
                     required
                   />
@@ -79,7 +143,7 @@ export class EditEvent extends Component {
                         type="date"
                         id="endDate"
                         className="form-control"
-                        onChange={this.props.handleChange("startDate")}
+                        onChange={this.updateValue("endDate")}
                         defaultValue={event.startDate}
                       />
                     </div>
@@ -89,7 +153,7 @@ export class EditEvent extends Component {
                         type="time"
                         id="endTime"
                         className="form-control"
-                        onChange={this.props.handleChange("startTime")}
+                        onChange={this.updateValue("endTime")}
                         defaultValue={event.startTime}
                       />
                     </div>
@@ -105,7 +169,7 @@ export class EditEvent extends Component {
                   type="text"
                   placeholder="Enter the address"
                   className="form-control"
-                  onChange={this.props.handleChange("location")}
+                  onChange={this.updateValue("location")}
                   defaultValue={event.location}
                 ></input>
               </div>
@@ -115,7 +179,7 @@ export class EditEvent extends Component {
                     <input
                       type="checkbox"
                       name="location"
-                      onClick={this.props.handleChange("location")}
+                      onClick={this.updateValue("location")}
                       defaultValue={event.location}
                     />
                     Off Premise Location
@@ -124,7 +188,7 @@ export class EditEvent extends Component {
                     <input
                       type="checkbox"
                       name="location"
-                      onClick={this.props.handleChange("location")}
+                      onClick={this.updateValue("location")}
                       defaultValue={event.location}
                     />
                     Online
@@ -133,7 +197,7 @@ export class EditEvent extends Component {
                     <input
                       type="checkbox"
                       name="location"
-                      onClick={this.props.handleChange("location")}
+                      onClick={this.updateValue("location")}
                       defaultValue={event.location}
                     />
                     To be Announced
@@ -151,7 +215,7 @@ export class EditEvent extends Component {
                 rows="4"
                 cols="50"
                 className="form-control"
-                onChange={this.props.handleChange("description")}
+                onChange={this.updateValue("description")}
                 defaultValue={event.description}
               />
             </div>
@@ -165,7 +229,7 @@ export class EditEvent extends Component {
                     id="all-ages"
                     name="age-restriction"
                     className="form-check-input"
-                    onClick={this.props.handleChange("ageRestriction")}
+                    onClick={this.updateValue("ageRestriction")}
                     defaultValue={event.ageRestriction}
                   />
                   <label htmlFor="all-ages" className="form-check-label">
@@ -178,7 +242,7 @@ export class EditEvent extends Component {
                     id="18-and-over"
                     name="age-restriction"
                     className="form-check-input"
-                    onClick={this.props.handleChange("ageRestriction")}
+                    onClick={this.updateValue("ageRestriction")}
                     defaultValue={event.ageRestriction}
                   />
                   <label htmlFor="18-and-over" className="form-check-label">
@@ -191,7 +255,7 @@ export class EditEvent extends Component {
                     id="21-and-over"
                     name="age-restriction"
                     className="form-check-input"
-                    onClick={this.props.handleChange("ageRestriction")}
+                    onClick={this.updateValue("ageRestriction")}
                     defaultValue={event.ageRestriction}
                   />
                   <label htmlFor="21-and-over" className="form-check-label">
@@ -211,7 +275,7 @@ export class EditEvent extends Component {
                     name="min-cost"
                     className="form-control"
                     placeholder="min $"
-                    onChange={this.props.handleChange("minCost")}
+                    onChange={this.updateValue("minCost")}
                     defaultValue={event.minCost}
                     min="0"
                     required
@@ -224,7 +288,7 @@ export class EditEvent extends Component {
                     name="max-cost"
                     className="form-control"
                     placeholder="max $"
-                    onChange={this.props.handleChange("maxCost")} //defaultValue={this.props.values.maxCost}
+                    onChange={this.updateValue("maxCost")} //defaultValue={this.props.values.maxCost}
                     defaultValue={event.maxCost}
                     min="0"
                     required
@@ -238,7 +302,7 @@ export class EditEvent extends Component {
               <input
                 type="url"
                 className="form-control"
-                onChange={this.props.handleChange("link")}
+                onChange={this.updateValue("link")}
                 defaultValue={event.link}
               />
             </div>
@@ -386,7 +450,11 @@ export class EditEvent extends Component {
             </button>
           </div>
           <div className="col save-btn">
-            <button onClick={this.props.toggleEdit} className="btn brewGreen">
+            <button
+              onClick={this.props.editEvent(values)}
+              className="btn brewGreen"
+              value={currentCard}
+            >
               Save
             </button>
           </div>
